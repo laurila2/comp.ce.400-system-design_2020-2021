@@ -1,0 +1,6 @@
+../../../../../TUNI.COMP.CE.400/ip.sw/Scripts/1.0/encode_video.sh: line 15: ../../../../../TUNI.fi/product/Kvazaar.Simulation-System/1.0/sw_Simulation-System/Kvazaar_0/Kvazaar_0: No such file or directory
+ENCODING STARTED AT: Tue Feb 23 15:40:51 EET 2021
+ENCODING FINISHED AT: Tue Feb 23 15:40:51 EET 2021
+USED QP 50
+SIZE OF THE INPUT FILE (KiB): 364500
+SIZE OF THE OUTPUT FILE (KiB): 839

@@ -1,0 +1,76 @@
+INCLUDE ANSWERS IN HERE
+
+1. What is the focus of the exercise project (=all exercises)? Why?
+Hint: Read the exercise project summary from Moodle
+Hint 2: Implementing a video encoder is NOT the focus of the exercises.
+ Focus is to learn to use open source components, to do a real project with
+ multiple tools and to do model based system design flow.
+
+
+*** PART ONE ***
+
+Some of the questions may involve examining the txt-files generated while encoding.
+
+2. How much time did the encoding take? Look at the "Total CPU time".
+
+	QP 50: 68.340 s
+	GROUP QP: 123.506 s
+
+3. How many frames were encoded per second (FPS)?
+
+	QP 50: 1.72
+	GROUP QP: 0.96
+
+4. How did decreasing the quantization value affect perceived quality of the video output?
+ Better
+
+5. How did decreasing the quantization value affect size of the video output file?
+ File size was 10x of the original.
+
+7. What was average PSNR?
+
+	QP 50: 29.5551 31.4598 35.8015
+	GROUP QP: 41.4892 41.2202 42.4295
+
+8. What was the data compression ratio of encoding using your assigned quantization value?
+Data compression ratio is defined as (size of the video input file)/(size of the video output file).
+
+	QP 50: 434.45
+	GROUP QP: 41.57
+
+*** PART TWO ***
+
+9. What was average PSNR of the profiling run?
+ AVG PSNR: 41.4892 41.2202 42.4295
+
+10. What does parameter -pg do in GCC? How it affects the resulting executable and its execution?
+ Generate extra code to write profile information suitable for the analysis program gprof (for -pg).
+
+11. Which three (3) functions use most time in Kvazaar? Answer based on the time used by functions
+alone, not by the functions they call.
+
+ kvz_angular_pred_generic,     44.37%
+ partial_butterfly_32_generic, 9.69%
+ kvz_quant_generic,	       7.51%
+
+12. Why it is better to look at percentages rather than absolute time like seconds or milliseconds while
+using a profiling tool (like gprof)?
+ It's easier to see what is taking processor time, absolute time might be wrong anyway.
+
+13. Which function would you choose for hardware acceleration? If there are multiple good candidates, choose one.
+ kvz_angular_pred_generic
+
+14. What does that function do? Why do you think it's a good candidate for hardware acceleration?
+Mention at least two reasons.
+Hint: Look at the source code at Kactus2 location TUNI.fi->ip.sw->Kvazaar->0.7.2->src 
+ Function generates angular predictions. Lot of calls --> Small time save might increase performance a lot.
+ Can be parallelized to some amount of cores.
+
+15. How are you feeling? What was hard? What was easy?
+ Tasks were pretty easy, but it's hard to understand whats going on.
+
+16. Fill the used hours below, including answering questions and any downtime:
+ANSWER THE HOURS AS IF YOU WERE PAID FOR IT (we will not pay you, though)
+
+	GROUP MEMBER 1: 252844, 4h
+	GROUP MEMBER 2: 274301, 4h

@@ -1,0 +1,56 @@
+INCLUDE ANSWERS IN HERE
+
+1. What is the purpose of SystemC?
+	Model systems with an event driven interface
+
+2. What does macro SC_MODULE do from user perspective?
+	Defines a class that is inherited from sc_module
+
+3. What does macro SC_CTOR do from user perspective?
+	Creates a constructor for class, tells when to call member functions
+
+4. What is the difference between SC_THREAD, SC_METHOD, and SC_CTHREAD?
+	SC_METHOD : consumes no time, cannot use wait()
+	SC_THREAD : has its own thread of execution, can consume time
+	SC_CTHREAD : same as SC_THREAD except sensitivity can only be to clock edge event
+
+5. Original model does not specify implementation for c1, c2, and v1.
+What was implementation of channels and the variable in this exercise?
+	c1, c2 : sc_fifo of length 5
+	v1 : value1 that is an array of 2 
+
+6. What does the file test_bench.cpp do?
+	Defines processes for test bench
+
+7. What is the purpose of the application GTKWave?
+	Graphical viewer for waveforms, useful for debugging
+	
+8. In this exercise, memory was merely used as an external storage. However, in practical computing
+the memory is likely used directly by CPU as in caches and DDR. Why speed of these is important?
+	Memory is often the bottleneck in programs
+	
+9. In this exercise, we had the option of directly affecting the memory speed.
+Why this may be difficult on real platforms?
+	Memories are mostly already run at their maximum speed
+
+10. What the was the final performance of your system? Answer this BEFORE the bonus section!
+	140 ns to run the program
+
+11. What was hard? What was easy?
+	Learning SystemC was hard, instructions were easy to follow
+
+12. Fill the used hours below, including answering questions and any downtime:
+
+	GROUP MEMBER 1: 252844: 5h
+	GROUP MEMBER 2: 274301: 5h
+	
+***BONUS SECTION ANSWERS***
+
+13. What components did you choose? What was the price? What was the performance?
+	Keravan Naata for process P4, Rauman Avain for P1, Espresso for bus. Execution time 154ns, cost 130
+
+14. Following setup is used for streaming 4K video:
+4K monitor <- HDMI 1.3 <- PC <- 5 Mbps internet <- Content service
+What is wrong with the setup? Hint: Search answers from articles and specifications if you do not know.
+	HDMI 1.3 supports max 2560x1440 resolution, Amazon recommends 15Mbps, Netflix 25Mbps for 4k content
+	-> High resolution monitor is useless

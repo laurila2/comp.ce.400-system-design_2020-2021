@@ -1,0 +1,60 @@
+INCLUDE ANSWERS IN HERE
+
+1. Did you get similar results simulating Kvazaar on ARM? What was the simulated FPS for Kvazaar on ARM?
+	Yes, 0.07
+
+2. What were your values for delay_c, search_intra_rough_percentage_c, rest_percentage_c?
+	delay_c = 17000, search_intra_rough_percentage_c = 0.59, rest_percentage_c = 0.41
+
+3. What was the simulated FPS of the HW-accelerated version?
+	0.17
+
+4. How was the computation time/delay added to the simulation on both ARM simulation and HW-accelerated simulation? What function/s, variable/s, and calculations are used?
+	search_delay((int)(cu_width*delay_c*rest_percentage_c)) for HW and SW exploration, 
+	search_intra_rough_delay((int)(width*delay_c*search_intra_rough_percentage_c)) for SW exploration,
+	intra_rough_search_time, rest_of_the_encoder_time, transfer_time keep track of spent time in simulation
+
+5. Do you think the computation time/delay is calculated accurately enough?
+	Yes
+
+6. How do we know the improvement we got with the HW accelerator is correct?
+	We trust that calculations are correct, afterwards we can compare to real HW results
+
+7. How many data transfers happened and how much data was sent and read while simulating the HW-accelerated version?
+###############################################################
+# Config data            :     278804 Writes    3345648 Bytes #
+# Unfilt1 data           :     278804 Writes    3623284 Bytes #
+# Unfilt2 data           :     278804 Writes    3623284 Bytes #
+# Orig data              :       1020 Writes    4177920 Bytes #
+# Lambda                 :          1 Reads           4 Bytes #
+# Results                :     278804 Reads     1115216 Bytes #
+###############################################################
+
+8. What percentages did you get for search_intra_rough/(HW-accelerator and transfers) and for the rest of the encoder, simulating Kvazaar on ARM and simulating the HW-accelerated version?
+	ARM simulation:
+		search_intra_rough 0.59
+		rest of the encoder 0.41
+	HW accelerated simulation
+		transfers 0.01
+		search_intra_rough 0.01
+		rest of the encoder 0.98
+
+9. What does using wait() in delay_ns() cause?
+	Increases simulation time
+
+10. By looking at the two different waveforms, what kind of problems not using wait() causes?
+	Simulation time does not represent actual time in HW
+
+11. What were your values for ARM_USED_CORES, arm_overclock_mhz_c, NUMBER_OF_ACCS and FPGA_FREQ_MHZ that achieved full HD real time encoding?
+	ARM_USED_CORES = 95
+	arm_overclock_mhz_c = 1500
+	NUMBER_OF_ACCS = 80
+	FPGA_FREQ_MHZ = 350
+
+12. What was hard? What was easy?
+	Following instructions was easy, hard was figuring out if our results were realistic
+
+13. Fill the used hours below, including answering questions and any downtime:
+
+	GROUP MEMBER 1: 252844: 4h
+	GROUP MEMBER 2: 274301: 4h

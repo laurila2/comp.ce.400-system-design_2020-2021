@@ -1,0 +1,15 @@
+INCLUDE ANSWERS IN HERE
+
+1. What was hard? What was easy?
+	Learning a lot of new systemc concepts took a lot of time, but after spending a lot of time on the first part, the second part went by fairly smoothly.
+	Trying to use templates for part 3 ended up being a waste of time
+
+2. Fill the used hours below, including answering questions and any downtime:
+
+	GROUP MEMBER 1: 9h
+	GROUP MEMBER 2: 9h
+
+3. Did you finish the bonus task? Fill the hours used for the bonus task below:
+
+	GROUP MEMBER 1: 4h
+	GROUP MEMBER 2: 4h
